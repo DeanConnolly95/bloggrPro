@@ -75,7 +75,7 @@
 					break;
 			}
 		}
-		this.color = options.color||'azure';
+		this.color = options.color||'red';
 		this.startViewMode = this.viewMode;
 		this.weekStart = options.weekStart||this.element.data('date-weekstart')||0;
 		this.weekEnd = this.weekStart === 0 ? 6 : this.weekStart - 1;
@@ -93,8 +93,6 @@
 		constructor: Datepicker,
 		
 		show: function(e) {
-		    var datepicker = this.picker;
-
 			this.picker.show();
 			this.height = this.component ? this.component.outerHeight() : this.element.outerHeight();
 			this.place();
@@ -115,20 +113,10 @@
 				type: 'show',
 				date: this.date
 			});
-			
-			setTimeout(function(){
-    			datepicker.addClass('open');
-			}, 170);
 		},
 		
 		hide: function(){
-			var datepicker = this.picker;
-			datepicker.removeClass('open');
-			
-			setTimeout(function(){
-    			datepicker.hide();
-			}, 500);
-			
+			this.picker.hide();
 			$(window).off('resize', this.place);
 			this.viewMode = this.startViewMode;
 			this.showMode();
@@ -140,8 +128,7 @@
 				type: 'hide',
 				date: this.date
 			});
-			
-    	},
+		},
 		
 		set: function() {
 			var formated = DPGlobal.formatDate(this.date, this.format);
@@ -250,7 +237,7 @@
 							.end()
 						.find('span').removeClass('active');
 			if (currentYear === year) {
-				months.eq(this.date.getMonth()).addClass('active').addClass(this.color);
+				months.eq(this.date.getMonth()).addClass('active');
 			}
 			
 			html = '';
@@ -262,7 +249,7 @@
 								.find('td');
 			year -= 1;
 			for (var i = -1; i < 11; i++) {
-				html += '<span class="year'+(i === -1 || i === 10 ? ' old' : '')+(currentYear === year ? ' active ' : '')+ this.color + '">'+year+'</span>';
+				html += '<span class="year'+(i === -1 || i === 10 ? ' old' : '')+(currentYear === year ? ' active' : '')+'">'+year+'</span>';
 				year += 1;
 			}
 			yearCont.html(html);
@@ -276,7 +263,7 @@
 				switch(target[0].nodeName.toLowerCase()) {
 					case 'th':
 						switch(target[0].className) {
-							case 'switch-datepicker':
+							case 'switch':
 								this.showMode(1);
 								break;
 							case 'prev':
@@ -461,7 +448,7 @@
 		headTemplate: '<thead>'+
 							'<tr>'+
 								'<th class="prev"><p>&lsaquo;</p></th>'+
-								'<th colspan="5" class="switch-datepicker"></th>'+
+								'<th colspan="5" class="switch"></th>'+
 								'<th class="next"><p>&rsaquo;</p></th>'+
 							'</tr>'+
 						'</thead>',
