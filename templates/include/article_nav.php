@@ -1,6 +1,6 @@
-<nav class="navbar navbar-success">
+<nav class="navbar navbar-inverse">
     <div class="container-fluid">
-        
+
         <div class="navbar-header">
             <a class="navbar-brand" href="index.php?action=archive">
                 &lt; Back
@@ -16,6 +16,6 @@
                 </li>
             </ul>
         </div>
-        
+
     </div>
 </nav>

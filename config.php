@@ -1,12 +1,12 @@
 <?php
-ini_set( "display_errors", true );
+ini_set( "display_errors", false );
 date_default_timezone_set( "Australia/Sydney" );
 define( "DB_DSN", "mysql:host=localhost;dbname=bloggrPro" );
 define( "DB_USERNAME", "bloggrPro" );
 define( "DB_PASSWORD", "bloggrPro" );
 define( "CLASS_PATH", "classes" );
 define( "TEMPLATE_PATH", "templates" );
-define( "HOMEPAGE_NUM_ARTICLES", 4 );
+define( "HOMEPAGE_NUM_ARTICLES", 5 );
 define( "ADMIN_USERNAME", "administrator" );
 define( "ADMIN_PASSWORD", "bloggrPro" );
 require( CLASS_PATH . "/Article.php" );

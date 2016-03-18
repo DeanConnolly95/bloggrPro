@@ -3,7 +3,7 @@
     <body>
         <?php include "inc/navbar.php"; ?>
             <div id="container" class="container">
-                <div class="col-md-6">
+                <div class="well">
                     <h1>All Posts</h1>
                     <?php if ( isset( $results['errorMessage'] ) ) { ?>
                         <div class="errorMessage">
@@ -12,7 +12,8 @@
                         <?php } ?>
 
                             <?php if ( isset( $results['statusMessage'] ) ) { ?>
-                                <div class="statusMessage">
+                                <div class="alert alert-dismissible alert-info">
+                                    <button type="button" class="close" data-dismiss="alert">X</button>
                                     <?php echo $results['statusMessage'] ?>
                                 </div>
                                 <?php } ?>
@@ -21,8 +22,8 @@
                                         <thead>
                                             <tr>
                                                 <th>Publication Date</th>
-                                                <th>Post Title</th>
-                                                <th>Tags</th>
+                                                <th>Title</th>
+                                                <th>Summary</th>
                                             </tr>
                                         </thead>
 
@@ -45,17 +46,7 @@
                                         </tbody>
                                     </table>
                 </div>
-
-                <div class="col-md-6">
-                    <h1><?php echo $results['totalRows']?> article<?php echo ( $results['totalRows'] != 1 ) ? 's' : '' ?> in total.</h1>
-                </div>
             </div>
-            <footer class="footer">
-                <div class="container">
-                    <p class="text-muted">
-                        Place sticky footer content here.
-                    </p>
-                </div>
-            </footer>
+            <?php include "templates/include/stickyfooter.php"; ?>
     </body>
-    <?php include "templates/include/footer.php" ?>
+    <?php include "templates/include/scripts.php"; ?>

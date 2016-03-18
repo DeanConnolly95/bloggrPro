@@ -1,7 +1,9 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Site Administration</a>
+            <a class="navbar-brand" href="#">
+                <?php include "strings/str.blog.name.php"; ?>
+            </a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
