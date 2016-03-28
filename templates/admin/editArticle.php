@@ -55,3 +55,4 @@
             </div>
             <?php include "templates/include/stickyfooter.php"; ?>
     </body>
+    <?php include "templates/include/scripts.php"; ?>

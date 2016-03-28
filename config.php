@@ -6,15 +6,11 @@ define( "DB_USERNAME", "bloggrPro" );
 define( "DB_PASSWORD", "bloggrPro" );
 define( "CLASS_PATH", "classes" );
 define( "TEMPLATE_PATH", "templates" );
-define( "HOMEPAGE_NUM_ARTICLES", 5 );
+define( "HOMEPAGE_NUM_ARTICLES", 4 );
 define( "ADMIN_USERNAME", "administrator" );
 define( "ADMIN_PASSWORD", "bloggrPro" );
 require( CLASS_PATH . "/Article.php" );
 
 function handleException( $exception ) {
-  echo "Sorry, a problem occurred. Please try later.";
-  error_log( $exception->getMessage() );
-}
-
-set_exception_handler( 'handleException' );
-?>
+  echo "It seems that <?php include'strings/str.blog.name.php'; ?> is having problems right now.
+    <br /><b>STATUS OF <?php include 'strings/str.blog.name.php'; ?></b>: <i>&quot; <?php include 'strings/str.blog.activeStatus.php'; ?> &quot;</i>"; error_log( $exception->getMessage() ); } set_exception_handler( 'handleException' ); ?>
